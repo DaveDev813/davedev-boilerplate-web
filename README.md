@@ -42,8 +42,8 @@ Check for linting errors
 
 ## Mock API
 
-cd mockApi
-npm install
-gulp
+### cd mockApi
+### npm install
+### gulp
 
 
