@@ -1,4 +1,13 @@
 
+## Technologies Involved
+
+- TypeScript - https://www.typescriptlang.org/
+- React JS - https://facebook.github.io/react-native/
+- Axios - https://www.npmjs.com/package/axios
+- Material UI - https://material-ui.com/
+- Gulp - https://www.npmjs.com/package/gulp
+- Formik - https://jaredpalmer.com/formik/docs/overview
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -42,8 +51,10 @@ Check for linting errors
 
 ## Mock API
 
-### cd mockApi
-### npm install
-### gulp
+```javascript
+cd mockApi
+npm install
+gulp
+```
 
 
