@@ -12,5 +12,9 @@
     "gulp"
   ],
   "author": "Rodave Joseph bobadilla",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-mock-server": "^1.1.4"
+  }
 }
