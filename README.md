@@ -7,6 +7,7 @@
 - Material UI - https://material-ui.com/
 - Gulp - https://www.npmjs.com/package/gulp
 - Formik - https://jaredpalmer.com/formik/docs/overview
+- StoreJS - https://www.npmjs.com/package/store
 
 ## Available Scripts
 
