@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Technologies Involved
+
+- TypeScript - https://www.typescriptlang.org/
+- React JS - https://facebook.github.io/react-native/
+- Axios - https://www.npmjs.com/package/axios
+- Material UI - https://material-ui.com/
+- Gulp - https://www.npmjs.com/package/gulp
+- Formik - https://jaredpalmer.com/formik/docs/overview
+- StoreJS - https://www.npmjs.com/package/store
 
 ## Available Scripts
 
@@ -37,8 +46,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `npm run lint:ts`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Check for linting errors 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Mock API
+
+```javascript
+cd mockApi
+npm install
+gulp
+```
+
+
