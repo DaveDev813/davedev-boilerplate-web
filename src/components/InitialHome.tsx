@@ -1,7 +1,17 @@
 import React, { ReactElement } from 'react';
-import { makeStyles, Typography, Grid, Avatar, Link } from '@material-ui/core';
+import {
+  makeStyles,
+  Typography,
+  Grid,
+  Avatar,
+  Link,
+  Snackbar,
+  Slide,
+} from '@material-ui/core';
 import './css/initialHomeStyle.css';
 import avatarImg from './images/avatar.jpeg';
+import { TransitionProps } from '@material-ui/core/transitions/transition';
+import API, { ApiResponse } from '../utils/api';
 
 const useStyles = makeStyles({
   bg: {
@@ -23,6 +33,44 @@ const useStyles = makeStyles({
 
 const InitialHome: React.FC = (): ReactElement => {
   const classes = useStyles();
+
+  const [isOpen, setIsOpen] = React.useState({
+    isOpen: false,
+    message: '',
+  });
+  const [tested, setTested] = React.useState(false);
+
+  const handleClose = (): void => {
+    if (isOpen.isOpen) {
+      setIsOpen({
+        isOpen: false,
+        message: '',
+      });
+    }
+  };
+
+  React.useEffect((): void => {
+    const checkConnection = async (): Promise<any> => {
+      setTested(true);
+      const isConnected: ApiResponse = await API.get('/users');
+      console.log('TCL: isConnected', isConnected);
+      if (!!isConnected.error) {
+        setIsOpen({
+          isOpen: true,
+          message: isConnected.error.message,
+        });
+      } else {
+        setIsOpen({
+          isOpen: true,
+          message: 'connection success',
+        });
+      }
+    };
+    if (!tested) {
+      checkConnection();
+    }
+  }, [setIsOpen, tested, setTested]);
+
   return (
     <div className={classes.bg}>
       <Grid
@@ -59,6 +107,22 @@ const InitialHome: React.FC = (): ReactElement => {
         <span />
         <span />
       </div>
+
+      <Snackbar
+        open={isOpen.isOpen}
+        onClose={handleClose}
+        TransitionComponent={(props: TransitionProps): ReactElement => (
+          <Slide {...props} direction="up" />
+        )}
+        ContentProps={{
+          'aria-describedby': 'message-id',
+        }}
+        message={
+          <span id="message-id">
+            <Typography variant="h6">API status: {isOpen.message}</Typography>
+          </span>
+        }
+      />
     </div>
   );
 };

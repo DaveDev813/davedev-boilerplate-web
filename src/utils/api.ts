@@ -21,6 +21,7 @@ export type ApiResponse = AxiosResponse & ErrorResponse;
 const setApi = (): AxiosInstance => {
   const ApiHandler = axios.create({
     baseURL: 'localhost:8090',
+    withCredentials: false,
     headers: { 'Content-Type': 'application/json' },
   });
 
