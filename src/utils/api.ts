@@ -20,7 +20,7 @@ export type ApiResponse = AxiosResponse & ErrorResponse;
 
 const setApi = (): AxiosInstance => {
   const ApiHandler = axios.create({
-    baseURL: `localhost:8080/api`,
+    baseURL: 'localhost:8090',
     headers: { 'Content-Type': 'application/json' },
   });
 
