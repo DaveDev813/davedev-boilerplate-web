@@ -1,0 +1,88 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+.logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+  width: 3.2em;
+  height: 3.2em;
+  font-size: 1.2rem;
+  background-color: #61dafb;
+}
+.logo span {
+  content: '';
+  width: 175%;
+  height: 450%;
+  background-color: transparent;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: shadow 1s linear infinite;
+  animation: shadow 1s linear infinite;
+}
+.logo span:nth-child(1) {
+  -webkit-transform: translate(-50%, -50%) rotate(35deg);
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+.logo span:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%) rotate(-35deg);
+  transform: translate(-50%, -50%) rotate(-35deg);
+  -webkit-animation-delay: -0.66s;
+  animation-delay: -0.66s;
+}
+.logo span:nth-child(3) {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
+  -webkit-animation-delay: -0.33s;
+  animation-delay: -0.33s;
+}
+
+@-webkit-keyframes shadow {
+  0% {
+    box-shadow: 0.6em -0.6em 0 0 #61dafb;
+  }
+  25% {
+    box-shadow: 0.6em 0.6em 0 0 #61dafb;
+  }
+  50% {
+    box-shadow: -0.6em 0.6em 0 0 #61dafb;
+  }
+  75% {
+    box-shadow: -0.6em -0.6em 0 0 #61dafb;
+  }
+  100% {
+    box-shadow: 0.6em -0.6em 0 0 #61dafb;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0.6em -0.6em 0 0 #61dafb;
+  }
+  25% {
+    box-shadow: 0.6em 0.6em 0 0 #61dafb;
+  }
+  50% {
+    box-shadow: -0.6em 0.6em 0 0 #61dafb;
+  }
+  75% {
+    box-shadow: -0.6em -0.6em 0 0 #61dafb;
+  }
+  100% {
+    box-shadow: 0.6em -0.6em 0 0 #61dafb;
+  }
+}
