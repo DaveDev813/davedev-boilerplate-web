@@ -17,6 +17,32 @@
     "name": "typicode"
   },
   "connection": {
-    "connected": true
-  }
+    "testdata": "hello?"
+  },
+  "users": [
+    {
+      "email": "email@email.com",
+      "password": "password"
+    },
+    {
+      "email": "howo@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": "jyortpzi"
+    },
+    {
+      "id": "jyorvjek",
+      "email": "xaxo@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "jyorvo2d",
+      "email": "xaxo@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "jyorwixa",
+      "email": "xaxo@mailinator.com",
+      "password": "Pa$$w0rd!"
+    }
+  ]
 }

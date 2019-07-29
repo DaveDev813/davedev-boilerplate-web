@@ -52,8 +52,10 @@ const InitialHome: React.FC = (): ReactElement => {
   React.useEffect((): void => {
     const checkConnection = async (): Promise<any> => {
       setTested(true);
-      const isConnected: ApiResponse = await API.get('/connection');
-      console.log('TCL: isConnected', isConnected);
+      const isConnected: ApiResponse = await API.post('/connection', {
+        testdata: 'hello?',
+      });
+
       if (!!isConnected.error) {
         setIsOpen({
           isOpen: true,
@@ -97,7 +99,7 @@ const InitialHome: React.FC = (): ReactElement => {
               href="https://github.com/DaveDev813/davedev-boilerplate-web"
               className={classes.header}
             >
-              DaveDev Boilerplate Template
+              DaveDev Boilerplate | Web
             </Link>
           </Typography>
         </Grid>
