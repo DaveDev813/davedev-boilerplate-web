@@ -7,6 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "mock:server": "node ./mockApi/server.js",
     "lint:ts": "tslint 'src/**/*.{ts,tsx,js}'",
     "lint:full": "npm run info && npm run lint:ts && tsc -p . --skipLibCheck --noEmit",
     "lint:commit": "npm run info && tsc --skipLibCheck --noEmit --esModuleInterop --jsx react"
