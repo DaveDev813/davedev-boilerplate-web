@@ -52,7 +52,7 @@ const InitialHome: React.FC = (): ReactElement => {
   React.useEffect((): void => {
     const checkConnection = async (): Promise<any> => {
       setTested(true);
-      const isConnected: ApiResponse = await API.get('/users');
+      const isConnected: ApiResponse = await API.get('/connection');
       console.log('TCL: isConnected', isConnected);
       if (!!isConnected.error) {
         setIsOpen({

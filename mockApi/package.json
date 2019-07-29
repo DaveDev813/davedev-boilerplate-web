@@ -4,7 +4,7 @@
   "description": "mock api for davedev-boilerplate-web",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node server.js"
   },
   "keywords": [
     "mock",
@@ -13,8 +13,8 @@
   ],
   "author": "Rodave Joseph bobadilla",
   "license": "ISC",
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-mock-server": "^1.1.4"
+  "dependencies": {},
+  "devDependencies": {
+    "json-server": "^0.15.0"
   }
 }
