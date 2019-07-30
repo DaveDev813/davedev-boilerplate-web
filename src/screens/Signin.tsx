@@ -158,7 +158,7 @@ const SignIn: React.FC = (): ReactElement => {
           onCloseSnackbar={(): void =>
             setHasNotif({
               isOpen: false,
-              variant: SnackbarVariant.SUCCESS,
+              variant: hasNotif.variant,
               message: '',
             })
           }

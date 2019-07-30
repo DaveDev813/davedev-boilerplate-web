@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 
 const TestScreen: React.FC = (): ReactElement => {
   const [hasNotif, setHasNotif] = React.useState(false);
-  console.log('TCL: hasNotif', hasNotif);
+
   return (
     <React.Fragment>
       <h1>Test Screen</h1>

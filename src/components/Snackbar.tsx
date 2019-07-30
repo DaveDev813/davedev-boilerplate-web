@@ -48,6 +48,7 @@ const useStyles1 = makeStyles((theme: Theme) => ({
   message: {
     display: 'flex',
     alignItems: 'center',
+    fontSize: 10,
   },
 }));
 
@@ -116,7 +117,7 @@ const SnackbarNotif = ({
     <Snackbar
       anchorOrigin={{
         vertical: 'bottom',
-        horizontal: 'left',
+        horizontal: 'right',
       }}
       open={open}
       autoHideDuration={6000}
