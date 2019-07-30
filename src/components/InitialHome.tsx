@@ -8,8 +8,8 @@ import {
   Snackbar,
   Slide,
 } from '@material-ui/core';
-import './css/initialHomeStyle.css';
-import avatarImg from './images/avatar.jpeg';
+import './assets/css/initialHomeStyle.css';
+import avatarImg from './assets/images/avatar.jpeg';
 import { TransitionProps } from '@material-ui/core/transitions/transition';
 import API, { ApiResponse } from '../utils/api';
 
