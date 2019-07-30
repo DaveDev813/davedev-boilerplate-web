@@ -11,8 +11,9 @@ import { Formik, FormikActions, FormikProps } from 'formik';
 import * as Yup from 'yup';
 import { InputField } from '../components/Input';
 import { Paper, LinearProgress } from '@material-ui/core';
-import API from '../utils/api';
+import API, { ApiResponse } from '../utils/api';
 import uniqid from 'uniqid';
+import SnackbarNotif, { SnackbarVariant } from '../components/Snackbar';
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -35,6 +36,11 @@ interface SignInFormValues {
 
 const SignIn: React.FC = (): ReactElement => {
   const [loading, setLoading] = React.useState(false);
+  const [hasNotif, setHasNotif] = React.useState({
+    isOpen: false,
+    message: 'placeholder',
+    variant: SnackbarVariant.SUCCESS,
+  });
 
   const classes = useStyles();
 
@@ -52,8 +58,18 @@ const SignIn: React.FC = (): ReactElement => {
   ): Promise<void> => {
     console.log('TCL: onSubmit -> actions', actions);
     console.log('TCL: onSubmit -> values', values);
-    const userLogin = await API.post('/users', { id: uniqid(), ...values });
+    const userLogin: ApiResponse = await API.post('/users', {
+      id: uniqid(),
+      ...values,
+    });
     console.log('TCL: userLogin', userLogin);
+    if (userLogin.error) {
+      setHasNotif({
+        isOpen: true,
+        message: userLogin.error.message,
+        variant: SnackbarVariant.WARNING,
+      });
+    }
     actions.setSubmitting(false); // don't reload page
   };
 
@@ -138,6 +154,16 @@ const SignIn: React.FC = (): ReactElement => {
             }}
           </Formik>
         </Paper>
+        <SnackbarNotif
+          onCloseSnackbar={(): void =>
+            setHasNotif({
+              isOpen: false,
+              variant: SnackbarVariant.SUCCESS,
+              message: '',
+            })
+          }
+          {...hasNotif}
+        />
       </Container>
     </React.Fragment>
   );

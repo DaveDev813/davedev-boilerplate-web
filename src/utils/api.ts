@@ -8,6 +8,7 @@ import * as HttpStatusCode from 'http-status-codes';
 import * as storage from 'store';
 
 export interface ResponseError {
+  error?: any;
   message: string;
   statusCode?: number;
 }
